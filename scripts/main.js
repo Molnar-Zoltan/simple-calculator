@@ -1,6 +1,7 @@
 const displayText = document.getElementById("displayText");
 const textMaxLength = 12; // Max character length of the display
 const errorText = "ERROR";
+const operations = ["+", "-", "*", "/"];
 
 
 function clearDisplay() {
@@ -9,8 +10,9 @@ function clearDisplay() {
 
 function addToDisplay(button) {
 
-    if ((displayText.value.length == 1 && displayText.value == "0") || displayText.value == errorText) { 
-        displayText.value = button.textContent; // If there's only 1 character on the display and it's 0 (the default number) then the number will be replaced with the new number (it does the same thing if there's an error text) 
+    if ((displayText.value.length == 1 && displayText.value == "0" && button.textContent != "." 
+        && !operations.includes(button.textContent)) || displayText.value == errorText) { 
+        displayText.value = button.textContent; 
     }
     else {
         if (displayText.value.length + 1 <= textMaxLength) {
