@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.0.1/math.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="displayText" value="0" readonly>
+            </div>
+            <div class="body">
+                <div class="numbers">
+                    <button class="buttons" onclick="addToDisplay(this)">1</button>
+                    <button class="buttons" onclick="addToDisplay(this)">2</button>
+                    <button class="buttons" onclick="addToDisplay(this)">3</button>
+                    <button class="buttons" onclick="addToDisplay(this)">4</button>
+                    <button class="buttons" onclick="addToDisplay(this)">5</button>
+                    <button class="buttons" onclick="addToDisplay(this)">6</button>
+                    <button class="buttons" onclick="addToDisplay(this)">7</button>
+                    <button class="buttons" onclick="addToDisplay(this)">8</button>
+                    <button class="buttons" onclick="addToDisplay(this)">9</button>
+                    <button class="buttons" onclick="addToDisplay(this)">0</button>
+                    <button class="buttons" onclick="addToDisplay(this)">.</button>
+                    <button class="buttons" onclick="deleteCharacter()">&#129120;</button>
+                </div>
+                <div class="operations">
+                    <button class="buttons" onclick="clearDisplay()">C</button>
+                    <button class="buttons" onclick="addToDisplay(this)">+</button>
+                    <button class="buttons" onclick="addToDisplay(this)">-</button>
+                    <button class="buttons" onclick="addToDisplay(this)">*</button>
+                    <button class="buttons" onclick="addToDisplay(this)">/</button>
+                    <button class="buttons" onclick="getResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

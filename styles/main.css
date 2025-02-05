@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --------------- Colors --------------- */
+    --background-color: #343a40;
+    
+    --primary-base: #868e96;
+    --primary-tint: #adb5bd;
+    --primary-shade: #495057;
+
+    --secondary-base: #e9ecef;
+    --secondary-tint: #dee2e6;
+    --secondary-shade: #ced4da;
+
+    --numbers-base: #ff922b;
+    --numbers-shade: #fd7e14;
+    
+    --operations-base: #e8590c;
+    --operations-shade: #d9480f;
+
+    --button-text: #ffe8cc;
+
+    --display-text-color: #ffffff;
+
+
+
+    /* --------------- Fonts --------------- */
+    font-size: 62.5%; /* 10px/16px * 100 = 62.5% */
+    @media (max-width: 780px) {  
+        font-size: 75%; /* 12px/16px * 100 = 75% */
+    }
+
+    --font-size-sm: 1.2rem; /* 12px on desktop */
+    --font-size-md: 1.6rem; /* 16px on desktop */
+    --font-size-lg: 2.4rem; /* 20px on desktop */
+    --font-size-xl: 3.2rem; /* 32px (h4) on desktop */
+    --font-size-xxl: 4rem; /* 40px (h3) on desktop */
+
+
+    --font-weight-regular: 400; 
+    --font-weight-bold: 700; 
+
+
+    /* --------------- Other --------------- */
+    --calculator-height: 40rem;
+    --calculator-width: 35rem;
+    --display-height: 10rem;
+    --numberlist-width: 25rem;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    & .calculator {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary-shade);
+        padding: 2rem;
+        height: var(--calculator-height);
+        width: var(--calculator-width);
+        border-radius: 2rem;
+
+
+        & .display {
+            height: var(--display-height);
+            background-color: var(--primary-tint);
+            border: none;
+            border-radius: 2rem;
+
+            & #displayText {
+                height: 100%;
+                width: 100%;
+                background: none;
+                border: none;
+                outline: none;
+                color: var(--display-text-color);
+                font-weight: var(--font-weight-bold);
+                font-size: var(--font-size-xxl);
+                margin: 0 1.5rem;
+                overflow: hidden;
+            }
+        }
+
+        & .body {
+            background: none;
+            height: calc(var(--calculator-height) - var(--display-height));
+            border: none;
+            border-radius: 2rem;
+            display: flex;
+            margin-top: 1.5rem;
+            border-radius: 2rem;
+
+            & .numbers {
+                height: 100%;
+                width: var(--numberlist-width);
+                background-color: var(--primary-base);
+
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+
+                & .buttons {
+                    border-radius: 50%;
+                    font-size: var(--font-size-lg);
+                    border: 0;
+                    font-weight: var(--font-weight-bold);
+                    color: var(--button-text);
+                    background-color: var(--numbers-base);
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.418);
+                    cursor: pointer;
+
+                    &:active,
+                    &:hover {
+                        background-color: var(--numbers-shade);
+                    }
+                }
+            }
+
+            & .operations {
+                height: 100%;
+                width: calc(var(--calculator-width) - var(--numberlist-width));
+                background-color: var(--primary-base);
+                margin-left: 1.5rem;
+                
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0.6rem;
+                padding: 1rem;
+                border-radius: 0.5rem;
+
+                & .buttons {
+                    border-radius: 2rem;
+                   
+                    font-size: var(--font-size-lg);
+                    border: 0;
+                    font-weight: var(--font-weight-bold);
+                    color: var(--button-text);
+                    background-color: var(--operations-base);
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.418);
+                    cursor: pointer;
+
+                    &:active,
+                    &:hover {
+                        background-color: var(--operations-shade);
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+
+}
